@@ -1,34 +1,106 @@
 .calc
+    margin-bottom: 122px
+    color: #fff
+    &__button
+        width: 100%
+        max-width: 306px
+    &__footer
+        margin-bottom: 80px
+        &__wrap
+            width: 100%
+            max-width: 400px
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                bottom: 0
+                right: -68px
+                height: 66px
+                width: 1px
+                background: #fff
+        &__text
+            font-weight: normal
+            font-size: 14px
+            line-height: 120%
+            &--last
+                max-width: 455px
+        &__title
+            font-weight: bold
+            font-size: 40px
+            line-height: 110%
+            color: #B76832
+    &__subtitle
+        font-family: 'Muller',sans-serif
+        font-weight: bold
+        font-size: 30px
+        line-height: 120%
+        margin-bottom: 34px
+    &__inputs
+        margin-bottom: 112px
+    &__block
+        position: relative
+        width: 100%
+        max-width: 460px
+        &__title
+            font-weight: 400
+            font-size: 18px
+            line-height: 120%
+            position: absolute
+            z-index: 1
+            left: 0
+            bottom: 26px
+    &__percent
+        font-weight: normal
+        font-size: 14px
+        line-height: 120%
+        span
+            font-weight: bold
+            font-size: 50px
+            line-height: 110%
+            color: #B61A21
+    &__header
+        margin-bottom: 64px
+    &__title
+        margin: 0
+        color: #fff
+    &__container
+        background: #25999C
+        border-radius: 62px
+        padding: 80px 100px 90px
     &__field
         font-style: normal
         font-weight: normal
-        font-size: 39px
-        line-height: 100%
-        color: #000000
-        padding: 20px 30px 15px
+        font-weight: bold
+        font-size: 30px
+        line-height: 120%
+        color: #fff
+        padding: 0 30px 15px
         background: transparent
         border-radius: 12px 12px 0px 0px
         width: 100%
         border: none
         text-align: right
+        position: relative
+        z-index: 2
         &:focus
             outline: none
+        &--2
+            padding-right: 65px
         &__text
             position: absolute
-            right: 30px
-            bottom: 15px
-            font-weight: normal
-            font-size: 39px
-            line-height: 100%
-            color: #000000
+            right: 0
+            bottom: 19px
+            font-weight: bold
+            font-size: 30px
+            line-height: 120%
     &__range-box
         width: 100%
 
     &__range
         position: relative
-        height: 3px
-        background: #f2f2f2
-
+        height: 4px
+        background: #D3D3D3
+        border-radius: 2px
         &__input::-webkit-slider-thumb
             width: 22px
             height: 22px
@@ -39,7 +111,7 @@
             appearance: none
             width: 100%
             position: absolute
-            z-index: 1
+            z-index: 2
             background: none
             opacity: 0
             cursor: pointer
@@ -51,42 +123,40 @@
         &__track
             position: absolute
             height: 100%
-            background: #0385CA
+            background: #B61A21
             display: block
-            z-index: 2
-
-        &__track:after
-            width: 16px
-            height: 16px
-            position: absolute
-            content: ''
-            right: 0px
-            top: 50%
-            margin-top: -10px
-            cursor: pointer
-            z-index: 6
-            background: #fff
-            border-radius: 50%
-            background: #0385CA
-            border: 2px solid #FFFFFF
-            margin-right: -10px
+            z-index: 1
+            border-radius: 2px
+            &:after
+                width: 21px
+                height: 21px
+                position: absolute
+                content: ''
+                right: 0px
+                top: -2px
+                margin-top: -10px
+                cursor: pointer
+                z-index: 6
+                background: #fff
+                border-radius: 50%
+                background: #B61A21
+                border: 3px solid #FFFFFF
+                margin-right: -10px
 
         &-min-val
             position: absolute
             left: -2px
-            bottom: -22px
+            bottom: -26px
             font-style: normal
             font-weight: normal
-            font-size: 10px
+            font-size: 12px
             line-height: 100%
-            color: #425A66
 
         &-max-val
             position: absolute
             right: -5px
-            bottom: -22px
+            bottom: -28px
             font-style: normal
             font-weight: normal
-            font-size: 10px
+            font-size: 12px
             line-height: 100%
-            color: #425A66
