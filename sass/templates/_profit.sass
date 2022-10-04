@@ -1,6 +1,8 @@
 .profit
     background: #2F5F5D
     color: #fff
+    padding-top: 130px
+    padding-bottom: 114px
     &__box
         padding: 85px 100px 85px 65px
         position: relative
@@ -16,6 +18,18 @@
             max-width: 265px
             display: flex
             margin-bottom: 40px
+            cursor: pointer
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                right: -15px
+                top: 50%
+                transform: translateY(-50%)
+                background: url(../img/profit/arrow.png) no-repeat center/contain
+                width: 7px
+                height: 12px
+                display: none
             &:last-child
                 margin-bottom: 0
             span
@@ -24,14 +38,37 @@
                 display: block
                 max-width: 215px
                 margin-left: 10px
+            &--active
+                &::after
+                    display: block
+                span
+                    color: #B61A21
     &__ul
         position: relative
         z-index: 2
+        font-weight: 500
+        font-size: 17px
+        line-height: 120%
+        display: flex
+        flex-wrap: wrap
+        padding-bottom: 115px
+        max-width: 540px
+        margin-right: 20px
+    &__wrap
+        align-self: flex-end
+    &__li
+        margin: 12px 30px
+        width: 100%
+        max-width: 200px
     &__title
         color: #fff
-        width: 582px
+        max-width: 582px
+        margin: 0
+        margin-bottom: 30px
     &__row
         position: relative
+        padding-right: 100px
+        justify-content: flex-end
     &__img
         position: absolute
         z-index: 1

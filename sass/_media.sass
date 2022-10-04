@@ -1,4 +1,10 @@
 @media screen and ( max-width: 1200px )
+    .profit
+        &__box
+            padding: 60px 80px 60px 40px
+        &__row
+            padding: 0 50px
+
     .calc
         &__container
             padding: 60px 80px
@@ -31,11 +37,34 @@
     .section
         &__title
             font-size: 30px
+            &-line
+                &::after
+                    width: 112px
+                    height: 6px
+                    border-radius: 3px
+                    bottom: -10px
 
     .button
         font-size: 14px
         padding: 20px 0
     // setting
+
+    .profit
+        padding: 100px 20px
+        &__box
+            padding: 50px 80px 50px 50px
+            &__item
+                font-size: 16px
+                margin-bottom: 35px
+                &::after
+                    width: 5px
+                    height: 10px
+                    right: -10px
+        &__li
+            max-width: 150px
+            margin: 8px 15px
+        &__ul
+            font-size: 12px
 
     .calc
         margin-bottom: 60px
@@ -134,6 +163,54 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .profit
+        &__title
+            margin-bottom: 86px
+            max-width: 360px
+            margin-left: auto
+            margin-right: auto
+        &__box
+            width: 100%
+            max-width: 360px
+            margin: auto
+            padding: 50px 20px
+            border-radius: 0 0 30px 30px
+            &__item
+                max-width: 215px
+                margin-left: auto
+                margin-right: auto
+                &::after
+                    right: -5px
+        &__ul
+            padding: 0
+            margin: 0
+            position: absolute
+            z-index: 2
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
+            width: 100%
+            max-width: 272px
+        &__li
+            font-size: 10px
+            max-width: 120px
+            margin: 8px
+        &__wrap
+            position: relative
+            z-index: 3
+            display: flex
+            align-items: flex-end
+            width: 100%
+            max-width: 360px
+            align-self: center
+        &__row
+            flex-direction: column
+            padding: 0
+        &__img
+            position: static
+            width: 100%
+            transform: none
+
     .main
         &__container
             padding: 70px 25px 200px
