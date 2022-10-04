@@ -6,24 +6,29 @@
         max-width: 306px
     &__footer
         margin-bottom: 80px
+        align-items: stretch
         &__wrap
             width: 100%
-            max-width: 400px
+            min-width: 468px
+            max-width: 468px
             position: relative
+            padding-right: 60px
             &::after
                 content: ''
                 position: absolute
                 bottom: 0
-                right: -68px
-                height: 66px
+                right: 0px
+                height: 100%
                 width: 1px
                 background: #fff
         &__text
             font-weight: normal
             font-size: 14px
             line-height: 120%
+            &--pay
+                text-align: right
             &--last
-                max-width: 455px
+                padding-left: 53px
         &__title
             font-weight: bold
             font-size: 40px
@@ -41,6 +46,8 @@
         position: relative
         width: 100%
         max-width: 460px
+        &:first-child
+            margin-right: 40px
         &__title
             font-weight: 400
             font-size: 18px
@@ -93,6 +100,10 @@
             font-weight: bold
             font-size: 30px
             line-height: 120%
+            &--year
+                right: auto
+                left: 100%
+                transform: translateX(-55px)
     &__range-box
         width: 100%
 
@@ -127,6 +138,7 @@
             display: block
             z-index: 1
             border-radius: 2px
+            width: 10%
             &:after
                 width: 21px
                 height: 21px
@@ -142,7 +154,8 @@
                 background: #B61A21
                 border: 3px solid #FFFFFF
                 margin-right: -10px
-
+            &--2
+                width: 60%
         &-min-val
             position: absolute
             left: -2px

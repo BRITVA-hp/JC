@@ -11,6 +11,17 @@
         line-height: 120%
         margin: auto
         color: #444444
+        &-line
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                left: 0
+                bottom: -20px
+                height: 12px
+                width: 240px
+                background: #b61a21
+                border-radius: 6px
 
 .container
     max-width: 1160px

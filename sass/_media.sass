@@ -1,4 +1,8 @@
 @media screen and ( max-width: 1200px )
+    .calc
+        &__container
+            padding: 60px 80px
+
     .info
         margin-bottom: 50px
         &__row
@@ -31,10 +35,44 @@
     .button
         font-size: 14px
         padding: 20px 0
-    // settings
+    // setting
+
+    .calc
+        margin-bottom: 60px
+        &__block
+            max-width: none
+            &:first-child
+                margin-right: 0
+                margin-bottom: 75px
+        &__footer
+            margin-bottom: 60px
+            flex-direction: column
+            &__wrap
+                padding: 0
+                min-width: 0
+                max-width: none
+                margin-bottom: 35px
+                &::after
+                    display: none
+            &__text
+                &--last
+                    font-size: 12px
+                    padding: 0
+        &__inputs
+            margin-bottom: 60px
+            flex-direction: column
+            align-items: center
+        &__header
+            margin-bottom: 55px
+        &__container
+            border-radius: 30px
+            padding: 60px 30px
+        &__subtitle
+            font-size: 25px
+            margin-bottom: 35px
 
     .advantages
-        margin-bottom: 30px
+        margin-bottom: 50px
         &__img
             right: 50%
             transform: translateX(50%)
@@ -103,6 +141,19 @@
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom, #CA3027
 
 @media screen and ( max-width: 575px )
+    .calc
+        padding: 0
+        margin-bottom: 0
+        &__container
+            padding-left: 20px
+            padding-right: 20px
+            border-radius: 0
+        &__header
+            flex-direction: column
+            align-items: flex-start
+        &__title
+            margin-bottom: 55px
+
     .info
         margin-bottom: 100px
         &__row
@@ -121,6 +172,27 @@
             border-radius: 0
             padding: 70px 25px 430px
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat center bottom, #CA3027
+
+@media screen and ( max-width: 450px )
+    .calc
+        &__field
+            text-align: left
+            padding: 5px 30px 10px 0
+        &__block
+            &__title
+                bottom: auto
+                top: -20px
+        &__footer
+            &__box
+                &:first-child
+                    margin-bottom: 20px
+            &__text
+                &--pay
+                    text-align: left
+            &__wrap
+                flex-direction: column
+        &__button
+            max-width: none
 
 @media screen and ( max-width: 400px )
     .main

@@ -30,46 +30,115 @@ document.addEventListener('click', () => {
         return prettify(payment);
     };
 
-    function range(rangeInput_, rangeTrack_, rangeNum_, resultField, periodOrSum, reverse = false) {
-        const rangeInput = document.querySelector(rangeInput_),
-              rangeTrack = document.querySelector(rangeTrack_),
-              rangeNum = document.querySelector(rangeNum_),
-              result = document.querySelector(resultField);
+    function correctWordYear(val) {
+        switch (val) {
+            case 1:
+                return 'год'
+            case 2:
+                return 'года'
+            case 3:
+                return 'года'
+            case 4:
+                return 'года'
+            default:
+                return 'лет'
+        }
+    }
+
+    function range(rangeInputSum_, rangeTrackSum_, rangeInputTerm_, rangeTrackTerm_, inputSum_, inputTerm_, resultField, textYear_) {
+        const rangeInputSum = document.querySelector(rangeInputSum_),
+              rangeTrackSum = document.querySelector(rangeTrackSum_),
+              rangeInputTerm = document.querySelector(rangeInputTerm_),
+              rangeTrackTerm = document.querySelector(rangeTrackTerm_),
+              inputSum = document.querySelector(inputSum_),
+              inputTerm = document.querySelector(inputTerm_),
+              result = document.querySelector(resultField),
+              textYear = document.querySelector(textYear_);
 
         
-        let min = +rangeInput.getAttribute('min'),
-            max = +rangeInput.getAttribute('max'),
-            step = +rangeInput.getAttribute('step'),
-            val_ = +rangeInput.value;
+        let minSum = +rangeInputSum.getAttribute('min'),
+            maxSum = +rangeInputSum.getAttribute('max'),
+            stepSum = +rangeInputSum.getAttribute('step'),
+            minTerm = +rangeInputTerm.getAttribute('min'),
+            maxTerm = +rangeInputTerm.getAttribute('max'),
+            stepTerm = +rangeInputTerm.getAttribute('step');
 
-        rangeInput.addEventListener('input', function() {
-            const periodOrSum_ = document.querySelector(periodOrSum).value
-            let val = +rangeInput.value,
-                position = 100 / (max - step) * (val - step);
+        rangeInputSum.addEventListener('input', function() {
+            let position = 100 / (maxSum - stepSum) * (this.value - stepSum);
 
-            rangeTrack.style.width = `${position}%`;
-            rangeNum.value = prettify(val);
-            reverse ? result.textContent = getPayment(periodOrSum_, val, 4) + ' ₽' : result.textContent = getPayment(val, periodOrSum_, 4) + ' ₽'
-        });
+            rangeTrackSum.style.width = `${position}%`;
+            inputSum.value = prettify(this.value);
 
-        rangeNum.addEventListener('input', function () {
-            const periodOrSum_ = document.querySelector(periodOrSum).value
-            this.value = prettify(this.value.replace(/\D/g, ''))
-            if (this.value.replace(/\D/g, '') > max) {
-                this.value = prettify(max)
-            }
-            if(this.value.replace(/\D/g, '') < min) {
+            if (inputTerm.value < minTerm) {
+                result.textContent = '-'
                 return
             }
-            if (this.value.replace(/\D/g, '') >= min && this.value.replace(/\D/g, '') <= max)  {
-                rangeTrack.style.width = `${100 / (max - step) * (this.value.replace(/\D/g, '') - step)}%`;
-                val_ = this.value.replace(/\D/g, '') 
+
+            result.textContent = getPayment(this.value, rangeInputTerm.value, 4) + ' ₽'
+        });
+
+        rangeInputTerm.addEventListener('input', function() {
+            let position = 100 / (maxTerm - stepTerm) * (this.value - stepTerm);
+
+            rangeTrackTerm.style.width = `${position}%`;
+            inputTerm.value = this.value;
+            textYear.textContent = correctWordYear(+this.value)
+
+            if (inputSum.value.replace(/\D/g, '') < minSum) {
+                result.textContent = '-'
+                return
             }
-            reverse ? result.textContent = getPayment(periodOrSum_, this.value.replace(/\D/g, ''), 4)  + ' ₽' : result.textContent = getPayment(this.value.replace(/\D/g, '') + ' ₽', periodOrSum_, 4)
+
+            result.textContent = getPayment(rangeInputSum.value, this.value, 4) + ' ₽'
+        });
+
+        inputSum.addEventListener('input', function () {
+            this.value = prettify(this.value.replace(/\D/g, ''))
+            if (this.value.replace(/\D/g, '') > maxSum) {
+                this.value = prettify(maxSum)
+            }
+            if(this.value.replace(/\D/g, '') < minSum) {
+                rangeInputSum.value = 0
+                result.textContent = '-'
+                rangeTrackSum.style.width = 0 + '%'
+                return
+            }
+            if (this.value.replace(/\D/g, '') >= minSum && this.value.replace(/\D/g, '') <= maxSum)  {
+                rangeTrackSum.style.width = `${100 / (maxSum - stepSum) * (this.value.replace(/\D/g, '') - stepSum)}%`;
+                rangeInputSum.value = this.value.replace(/\D/g, '')
+            }
+            if (inputTerm.value < minTerm) {
+                result.textContent = '-'
+                return
+            }
+            result.textContent = getPayment(rangeInputSum.value, rangeInputTerm.value, 4)  + ' ₽'
+        })
+
+        inputTerm.addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '')
+            if (this.value > maxTerm) {
+                this.value = maxTerm
+            }
+            if(this.value < minTerm) {
+                rangeInputTerm.value = 0
+                result.textContent = '-'
+                rangeTrackTerm.style.width = 0 + '%'
+                return
+            }
+            if (this.value >= minTerm && this.value <= maxTerm)  {
+                rangeTrackTerm.style.width = `${100 / (maxTerm - stepTerm) * (this.value - stepTerm)}%`;
+                rangeInputTerm.value = this.value
+                rangeInputTerm.value = this.value
+                textYear.textContent = correctWordYear(+this.value)
+            }
+            if (inputSum.value.replace(/\D/g, '') < minSum) {
+                result.textContent = '-'
+                return
+            }
+            result.textContent = getPayment(rangeInputSum.value, rangeInputTerm.value, 4)  + ' ₽'
         })
     }
 
-    range(".calc__range__input--1", ".calc__range__track--1", ".calc__field--1", '.calc__footer__title--res', ".calc__range__input--2")
-    range(".calc__range__input--2", ".calc__range__track--2", ".calc__field--2", '.calc__footer__title--res', ".calc__range__input--1", true)
+    range(".calc__range__input--1", ".calc__range__track--1", ".calc__range__input--2", ".calc__range__track--2", ".calc__field--1", ".calc__field--2", '.calc__footer__title--res', ".calc__field__text--year")
 
 })
