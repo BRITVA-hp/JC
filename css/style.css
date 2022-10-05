@@ -384,7 +384,8 @@ body {
   text-align: center;
 }
 .button:hover {
-  transform: scale(1.03);
+  background: #444444;
+  border: 2px solid #444444;
 }
 .button--back {
   background: rgba(182, 26, 33, 0.2);
@@ -1021,7 +1022,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 115px;
-  max-width: 540px;
+  width: 100%;
+  max-width: 550px;
   margin-right: 20px;
 }
 .profit__wrap {
@@ -1101,6 +1103,7 @@ body {
   padding-top: 14px;
   padding-bottom: 230px;
   color: #fff;
+  margin-bottom: -230px;
 }
 .we__text {
   font-size: 20px;
@@ -1119,6 +1122,37 @@ body {
 }
 .we__title::after {
   background: #25999C;
+}
+
+.credit {
+  color: #fff;
+}
+.credit__container {
+  padding: 90px 100px;
+  background: url(../img/credit/img.png) no-repeat right calc(50% + 20px), #2F5F5D;
+  border-radius: 62px;
+}
+.credit__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  max-width: 730px;
+  margin-bottom: 30px;
+}
+.credit__text {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 120%;
+  text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin-bottom: 55px;
+}
+.credit__text span {
+  text-decoration: underline;
+}
+.credit__button {
+  width: 100%;
+  max-width: 306px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1174,6 +1208,21 @@ body {
   .button {
     font-size: 14px;
     padding: 20px 0;
+  }
+  .credit__container {
+    padding: 90px 50px;
+  }
+  .credit__button {
+    max-width: 255px;
+  }
+  .credit__title {
+    font-size: 25px;
+    max-width: 460px;
+  }
+  .credit__text {
+    font-size: 18px;
+    max-width: 415px;
+    margin-bottom: 50px;
   }
   .we__container {
     padding: 60px 0 50px;
@@ -1338,10 +1387,20 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .credit {
+    padding: 0;
+  }
+  .credit__container {
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: url(../img/credit/imgM.png) no-repeat right bottom, #2F5F5D;
+  }
   .we {
     padding-top: 100px;
     padding-bottom: 450px;
     background: url(../img/we/imgM.png) no-repeat center bottom, #B61A21;
+    margin-bottom: 0;
   }
   .we__box {
     max-width: none;
@@ -1442,6 +1501,9 @@ body {
   }
 }
 @media screen and (max-width: 575px) {
+  .credit__container {
+    background: #2F5F5D;
+  }
   .calc {
     padding: 0;
     margin-bottom: 0;

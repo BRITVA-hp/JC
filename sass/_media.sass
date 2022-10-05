@@ -49,6 +49,19 @@
         padding: 20px 0
     // setting
 
+    .credit
+        &__container
+            padding: 90px 50px
+        &__button
+            max-width: 255px
+        &__title
+            font-size: 25px
+            max-width: 460px
+        &__text
+            font-size: 18px
+            max-width: 415px
+            margin-bottom: 50px
+
     .we
         &__container
             padding: 60px 0 50px
@@ -180,10 +193,19 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .credit
+        padding: 0
+        &__container
+            border-radius: 0
+            padding-left: 20px
+            padding-right: 20px
+            background: url(../img/credit/imgM.png) no-repeat right bottom, #2F5F5D
+
     .we
         padding-top: 100px
         padding-bottom: 450px
         background: url(../img/we/imgM.png) no-repeat center bottom, #B61A21
+        margin-bottom: 0
         &__box
             max-width: none
         &__container
@@ -270,6 +292,10 @@
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom, #CA3027
 
 @media screen and ( max-width: 575px )
+    .credit
+        &__container
+            background: #2F5F5D
+
     .calc
         padding: 0
         margin-bottom: 0
