@@ -1,4 +1,25 @@
-document.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+    // анимация плавного появление
+    function fadeIn (elem) {
+        let startAnimation = null;
+        const step = timestamp => {
+            if (!startAnimation) startAnimation = timestamp;
+            let progress = timestamp - startAnimation;
+            elem.style.opacity = progress/500;
+            if (progress < 500) {
+                window.requestAnimationFrame(step);
+            }
+        }
+        window.requestAnimationFrame(step);
+    }
+
+    // удаление класса у элементов массива
+    function clearActiveClass(arr, activeClass) {
+        arr.forEach(item => {
+          item.classList.remove(activeClass);
+        });
+    }
 
     // range, calc
 
@@ -140,5 +161,87 @@ document.addEventListener('click', () => {
     }
 
     range(".calc__range__input--1", ".calc__range__track--1", ".calc__range__input--2", ".calc__range__track--2", ".calc__field--1", ".calc__field--2", '.calc__footer__title--res', ".calc__field__text--year")
+
+    // tabs (profit)
+    const profitData = [
+        {
+            img: 'img/profit/img1.webp',
+            imgM: 'img/profit/img1M.webp',
+            ul: [
+                'На новый автомобиль',
+                'На б\у автомобиль',
+                'Автомобиль в лизинг'
+            ]
+        },
+        {
+            img: 'img/profit/img2.webp',
+            imgM: 'img/profit/img2M.webp',
+            ul: [
+                'На новую квартиру',
+                'На вторичный рынок'
+            ]
+        },
+        {
+            img: 'img/profit/img3.webp',
+            imgM: 'img/profit/img3M.webp',
+            ul: [
+                'С просроченными кредитами',
+                'С ипотеками',
+                'С залогами',
+                'С автокредитами'
+            ]
+        },
+        {
+            img: 'img/profit/img4.webp',
+            imgM: 'img/profit/img4M.webp',
+            ul: [
+                'На открытие бизнеса',
+                'На развитие бизнеса'
+            ]
+        },
+        {
+            img: 'img/profit/img5.webp',
+            imgM: 'img/profit/img5M.webp',
+            ul: [
+                'На любые цели наличными'
+            ]
+        },
+        {
+            img: 'img/profit/img6.webp',
+            imgM: 'img/profit/img6M.webp',
+            ul: [
+                'На строительство дома',
+                'На строительство дачи',
+                'На строительство коттеджа',
+            ]
+        }
+    ]
+
+    const profitButtons = document.querySelectorAll('.profit__box__item'),
+          profitUl = document.querySelector('.profit__ul'),
+          profitImg = document.querySelector('.profit__img'),
+          profitRow = document.querySelector('.profit__row');
+
+    
+    profitButtons.forEach((button, buttonIndex) => {
+        button.addEventListener('click', () => {
+            clearActiveClass(profitButtons, 'profit__box__item--active')
+            button.classList.add('profit__box__item--active')
+
+            // плавное появление
+            fadeIn(profitRow)
+
+            // меняем картинки
+            profitImg.lastElementChild.setAttribute('src', profitData[buttonIndex].img)
+            profitImg.firstElementChild.setAttribute('srcset', profitData[buttonIndex].imgM)
+
+            // рендер <li>
+            profitUl.textContent = ''
+            profitData[buttonIndex].ul.forEach(str => {
+                const li = `<li class="profit__li">${str}</li>`
+                profitUl.innerHTML += li
+            })
+        })
+    })
 
 })

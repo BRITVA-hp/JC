@@ -49,8 +49,25 @@
         padding: 20px 0
     // setting
 
+    .we
+        &__container
+            padding: 60px 0 50px
+        &__box
+            max-width: 430px
+        &__title
+            margin-bottom: 77px
+        &__text
+            font-size: 16px
+
+    .help
+        margin-bottom: 100px
+        &__title
+            max-width: 400px
+            margin-bottom: 85px
+
     .profit
         padding: 100px 20px
+        margin-bottom: 100px
         &__box
             padding: 50px 80px 50px 50px
             &__item
@@ -163,6 +180,41 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .we
+        padding-top: 100px
+        padding-bottom: 450px
+        background: url(../img/we/imgM.png) no-repeat center bottom, #B61A21
+        &__box
+            max-width: none
+        &__container
+            padding: 0
+            background: none
+
+    .help
+        &__row
+            display: flex
+            flex-direction: column
+            align-items: center
+            grid-gap: 0
+        &__card
+            width: 100%
+            max-width: 360px
+            height: 166px
+            padding-top: 30px
+            margin-bottom: 35px
+            &:last-child
+                margin-bottom: 0
+            &__text
+                font-size: 16px
+            &__img
+                width: 60px
+                height: 60px
+                border-radius: 14px
+                img
+                    max-width: 28px
+            &__content
+                padding: 64px 20px 20px 30px
+
     .profit
         &__title
             margin-bottom: 86px
