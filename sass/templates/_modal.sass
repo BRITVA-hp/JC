@@ -1,0 +1,44 @@
+.modal
+    position: fixed
+    z-index: 199
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    overflow: auto
+    background: rgba(0, 0, 0, 0.6)
+    opacity: 0
+    visibility: hidden
+    transition: 0.3s
+    &--active
+        opacity: 1
+        visibility: visible
+    &__container
+        min-height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding: 10px
+    &-video
+        &__container
+            position: relative
+            padding: 0
+        &__dialog
+            position: relative
+            z-index: 1
+        &__video
+            display: block
+            margin: auto
+            max-width: 100%
+            height: auto
+            max-height: 100vh
+        &__close
+            position: absolute
+            z-index: 2
+            top: 20px
+            right: 20px
+            cursor: pointer

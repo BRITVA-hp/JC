@@ -640,7 +640,7 @@
                     <div class="reviews__box">
 
                         <div class="reviews__card">
-                            <img src="img/reviews/play.png" alt="play" class="reviews__play">
+                            <img data-video="./video/video2.MOV" src="img/reviews/play.png" alt="play" class="reviews__play">
                             <img src="img/reviews/img1.png" alt="review" class="reviews__card__img">
 
                             <div class="reviews__card__box">
@@ -650,12 +650,12 @@
                         </div>
 
                         <div class="reviews__card">
-                            <img src="img/reviews/play.png" alt="play" class="reviews__play">
-                            <img src="img/reviews/img1.png" alt="review" class="reviews__card__img">
+                            <img data-video="./video/video1.MOV" src="img/reviews/play.png" alt="play" class="reviews__play">
+                            <img src="img/reviews/img2.png" alt="review" class="reviews__card__img">
 
                             <div class="reviews__card__box">
-                                <p class="reviews__card__name">Валерий Павлов</p>
-                                <p class="reviews__card__date">5 января 2022 г.</p>
+                                <p class="reviews__card__name">Дмитрий Сергеев</p>
+                                <p class="reviews__card__date">20 февраля 2022 г.</p>
                             </div>
                         </div>
                         
@@ -666,7 +666,26 @@
         </section>
         <!-- /.section reviews -->
 
+        <section class="section terms">
+
+            <div class="container terms__container">
+                <h3 class="secion__title terms__title section__title-line">Подробные условия получения кредита</h3>
+                
+            </div>
+
+        </section>
+        <!-- /.section terms -->
+
     </main>
+
+    <div class="modal modal-video">
+        <div class="modal__container modal-video__container">
+            <img src="img/modal/close.png" alt="close" class="modal-video__close">
+            <div class="modal-video__dialog">
+                <video class="modal-video__video" id="video" controls="controls" src="#"></video>
+            </div>
+        </div>
+    </div>
     
     <script src="js/script.js"></script>
 

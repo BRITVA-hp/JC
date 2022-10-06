@@ -1,0 +1,47 @@
+.reviews
+    background: linear-gradient(to bottom, transparent 150px, #2F5F5D 150px calc(100% - 100px), transparent calc(100% - 100px))
+    margin-bottom: 110px
+    &__row
+        align-items: center
+    &__play
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        cursor: pointer
+    &__card
+        position: relative
+        color: #fff
+        text-align: right
+        &__name
+            font-weight: 600
+            font-size: 20px
+            line-height: 120%
+            margin-bottom: 20px
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                width: 14px
+                height: 14px
+                border-radius: 50%
+                background: #B76832
+                left: -34px
+                top: 6px
+        &__date
+            font-weight: normal
+            font-size: 18px
+            line-height: 130%
+        &__box
+            position: absolute
+            bottom: 35px
+            right: 40px
+    &__title
+        max-width: 240px
+        margin: 0
+        color: #fff
+    &__box
+        display: grid
+        grid-template-columns: 400px 400px
+        column-gap: 45px
+        row-gap: 35px

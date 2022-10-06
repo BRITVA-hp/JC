@@ -1,4 +1,16 @@
 @media screen and ( max-width: 1200px )
+    .reviews
+        background: linear-gradient(to bottom, transparent 300px, #2F5F5D 300px calc(100% - 100px), transparent calc(100% - 100px))
+        &__title
+            margin-bottom: 100px
+            color: #444444
+            max-width: 400px
+        &__row
+            flex-direction: column
+            align-items: flex-start
+        &__box
+            align-self: center
+
     .profit
         &__box
             padding: 60px 80px 60px 40px
@@ -48,6 +60,32 @@
         font-size: 14px
         padding: 20px 0
     // setting
+
+    .reviews
+        background: linear-gradient(to bottom, transparent 250px, #2F5F5D 250px calc(100% - 100px), transparent calc(100% - 100px))
+        margin-bottom: 100px
+        &__card
+            &__box
+                bottom: 30px
+                right: 34px
+            &__name
+                font-size: 18px
+                margin-bottom: 15px
+                &::after
+                    width: 12px
+                    height: 12px
+                    left: -26px
+                    top: 4px
+            &__date
+                font-size: 16px
+        &__box
+            grid-gap: 35px
+            grid-template-columns: repeat(auto-fill, 360px)
+            width: 100%
+            justify-content: center
+        &__title
+            margin-bottom: 86px
+            max-width: 250px
 
     .faq
         margin-bottom: 100px
@@ -388,6 +426,24 @@
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom, #CA3027
 
 @media screen and ( max-width: 575px )
+    .reviews
+        background: #2F5F5D
+        padding-top: 100px
+        padding-bottom: 100px
+        &__card
+            margin-bottom: 35px
+            width: 100%
+            max-width: 360px
+            &:last-child
+                margin-bottom: 0
+        &__box
+            display: flex
+            flex-direction: column
+            align-items: center
+            grid-gap: 0
+        &__title
+            color: #fff
+
     .faq
         padding: 0
         &__title
