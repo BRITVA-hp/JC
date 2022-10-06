@@ -1,0 +1,81 @@
+.quiz
+    position: relative
+    z-index: 2
+    &__box
+        margin-bottom: 70px
+    &__buttons
+        width: 100%
+        max-width: 414px
+        display: flex
+        justify-content: space-between
+    &__button
+        width: 192px
+    &__radio
+        display: none
+        &:checked + .quiz__ok
+            &::after
+                display: block
+    &__ok
+        display: block
+        width: 28px
+        height: 28px
+        border-radius: 50%
+        border: 1px solid #444444
+        position: absolute
+        left: 0
+        top: 2px
+        &::after
+            content: ''
+            position: absolute
+            width: 20px
+            height: 20px
+            background: #B61A21
+            border-radius: 50%
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            display: none
+    &__answer
+        display: block
+        position: relative
+        max-width: 410px
+        margin-bottom: 25px
+        padding-left: 46px
+        cursor: pointer
+        &:last-child
+            margin-bottom: 0
+        &__text
+            font-weight: normal
+            font-size: 25px
+            line-height: 120%
+            text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05)
+    &__question
+        font-weight: bold
+        font-size: 25px
+        line-height: 120%
+        text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05)
+        margin-bottom: 30px
+        max-width: 490px
+    &__container
+        background: url(../img/quiz/img.png) no-repeat calc( 50% + 350px ) bottom #FFFFFF
+        border-radius: 60px
+        padding: 100px
+    &__title
+        margin-bottom: 84px
+    &__subtitle
+        font-weight: 400
+        font-size: 18px
+        line-height: 120%
+        text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05)
+        max-width: 434px
+        margin-bottom: 60px
+        span
+            font-weight: 600
+    &__num
+        font-family: 'Muller', sans-serif
+        font-weight: 800
+        font-size: 46px
+        line-height: 120%
+        color: #B61A21
+        text-shadow: 0px 7.40741px 92.5926px rgba(0, 0, 0, 0.05)
+        margin-bottom: 13px

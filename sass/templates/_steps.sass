@@ -1,0 +1,46 @@
+.steps
+    margin-bottom: 130px
+    &__title
+        margin-bottom: 90px
+    &__card
+        width: 100%
+        max-width: 322px
+        display: flex
+        align-items: center
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            width: 12px
+            height: 24px
+            background: url(../img/steps/arrow.png) no-repeat center/contain
+            top: 50%
+            right: -34px
+            transform: translateY(-50%)
+        &:last-child
+            &::after
+                display: none
+        &__img
+            min-width: 100px
+            height: 100px
+            border-radius: 50%
+            background: #fff
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-right: 20px
+        &__title
+            font-weight: 600
+            font-size: 18px
+            line-height: 120%
+            margin-bottom: 5px
+        &__text
+            font-weight: 400
+            font-size: 14px
+            line-height: 130%
+    &__row
+        display: grid
+        grid-template-columns: repeat(auto-fill, 322px)
+        column-gap: 80px
+        row-gap: 40px
+        justify-content: center

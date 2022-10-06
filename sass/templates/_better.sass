@@ -1,0 +1,53 @@
+.better
+    padding-top: 660px
+    padding-bottom: 130px
+    margin-top: -540px
+    background: #B76832
+    position: relative
+    z-index: 1
+    color: #fff
+    margin-bottom: 130px
+    &__row
+        display: grid
+        grid-template-columns: repeat(auto-fill, 560px)
+        grid-gap: 40px
+        justify-content: center
+    &__card
+        width: 560px
+        height: 440px
+        background: #25999C
+        border-radius: 35px
+        padding: 68px 66px 53px 60px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &--last
+            background: #2F5F5D
+        &__ul
+            list-style-type: none
+            font-weight: normal
+            font-size: 18px
+            line-height: 120%
+            text-transform: uppercase
+            opacity: 0.8
+            text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05)
+            span
+                font-weight: bold
+        &__title
+            font-family: 'Muller', sans-serif
+            font-style: normal
+            font-weight: bold
+            font-size: 30px
+            line-height: 120%
+            margin-bottom: 32px
+        &__text
+            font-weight: normal
+            font-size: 18px
+            line-height: 120%
+            opacity: 0.8
+            text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05)
+    &__title
+        color: #fff
+        margin-bottom: 100px
+        &::after
+            background: #B61A21

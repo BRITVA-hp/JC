@@ -49,7 +49,79 @@
         padding: 20px 0
     // setting
 
+    .faq
+        margin-bottom: 100px
+        &__title
+            margin-bottom: 86px
+        &__item
+            &__text
+                font-size: 14px
+                max-width: 380px
+            &__header
+                padding-bottom: 20px
+            &__title
+                font-size: 18px
+
+    .better
+        padding-top: 500px
+        margin-top: -400px
+        padding-bottom: 100px
+        margin-bottom: 100px
+        &__row
+            grid-template-columns: repeat(auto-fill, 360px)
+        &__title
+            margin-bottom: 96px
+            &::after
+                background: #25999C
+        &__card
+            width: 360px
+            height: 380px
+            padding: 46px 34px 55px 40px
+            &__title
+                font-size: 20px
+            &__text
+                font-size: 16px
+            &__ul
+                font-size: 14px
+
+    .quiz
+        &__container
+            padding: 100px 50px
+            background: url(../img/quiz/imgM.png) no-repeat calc( 100% + 50px ) bottom #FFFFFF
+            border-radius: 40px
+        &__button
+            width: 100%
+            max-width: 148px
+        &__buttons
+            max-width: 316px
+        &__title
+            margin-bottom: 56px
+        &__subtitle
+            font-size: 16px
+        &__num
+            font-size: 40px
+            margin-bottom: 20px
+        &__question
+            font-size: 20px
+            margin-bottom: 60px
+        &__ok
+            top: -2px
+        &__answer
+            &__text
+                font-size: 20px
+
+    .steps
+        margin-bottom: 100px
+        &__card
+            &::after
+                right: -26px
+            &__title
+                font-size: 16px
+        &__row
+            grid-gap: 40px
+
     .credit
+        margin-bottom: 100px
         &__container
             padding: 90px 50px
         &__button
@@ -193,6 +265,30 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .faq
+        &__title
+            padding-left: 50px
+            &::after
+                left: 50px
+        &__item
+            padding-left: 50px
+            padding-right: 50px
+            &::after
+                width: calc( 100% - 100px )
+
+    .quiz
+        &__container
+            background: url(../img/quiz/imgM.png) no-repeat center bottom #FFFFFF
+            padding-bottom: 620px
+
+    .steps
+        &__card
+            &::after
+                display: none
+        &__row
+            grid-template-columns: 1fr
+            justify-items: center
+
     .credit
         padding: 0
         &__container
@@ -292,6 +388,35 @@
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom, #CA3027
 
 @media screen and ( max-width: 575px )
+    .faq
+        padding: 0
+        &__title
+            padding: 0 20px
+            &::after
+                left: 20px
+        &__item
+            padding-left: 20px
+            padding-right: 20px
+            &::after
+                width: calc(100% - 40px)
+
+    .better
+        padding-top: 100px
+        margin-top: 0
+        &__card
+            width: 100%
+            max-width: 360px
+        &__row
+            grid-template-columns: 1fr
+            justify-items: center
+
+    .quiz
+        padding: 0
+        &__container
+            border-radius: 0
+            padding-left: 20px
+            padding-right: 20px
+
     .credit
         &__container
             background: #2F5F5D
@@ -350,6 +475,11 @@
             max-width: none
 
 @media screen and ( max-width: 400px )
+    .better
+        &__card
+            padding: 30px 20px
+            border-radius: 20px
+
     .main
         &__container
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom/350px, #CA3027
