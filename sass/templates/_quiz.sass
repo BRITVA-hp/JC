@@ -1,6 +1,19 @@
 .quiz
     position: relative
     z-index: 2
+    &__input-group
+        max-width: 376px
+        &--city
+            margin-top: 20px
+    &__text
+        font-family: 'Muller', sans-serif
+        font-weight: 900
+        font-size: 30px
+        line-height: 120%
+        text-shadow: 0px 7.40741px 92.5926px rgba(0, 0, 0, 0.05)
+        margin-bottom: 50px
+        span
+            color: #B61A21
     &__box
         margin-bottom: 70px
     &__buttons
@@ -10,6 +23,9 @@
         justify-content: space-between
     &__button
         width: 192px
+        &--last
+            width: 100%
+            max-width: 288px
     &__radio
         display: none
         &:checked + .quiz__ok
@@ -57,7 +73,7 @@
         margin-bottom: 30px
         max-width: 490px
     &__container
-        background: url(../img/quiz/img.png) no-repeat calc( 50% + 350px ) bottom #FFFFFF
+        background: url(../img/quiz/img.png) no-repeat calc( 50% + 350px ) bottom/contain #FFFFFF
         border-radius: 60px
         padding: 100px
     &__title

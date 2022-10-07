@@ -1,4 +1,9 @@
 @media screen and ( max-width: 1200px )
+    .modal
+        &-main
+            &__dialog
+                padding: 75px
+
     .reviews
         background: linear-gradient(to bottom, transparent 300px, #2F5F5D 300px calc(100% - 100px), transparent calc(100% - 100px))
         &__title
@@ -46,6 +51,27 @@
 
 @media screen and ( max-width: 991px )
     // settings
+    .select
+        padding: 18px 20px
+        font-size: 13px
+
+    .input
+        padding: 18px 20px
+        font-size: 13px
+
+    .input-group
+        &--select
+            &::after
+                bottom: 21px
+                right: 14px
+    
+    .option
+        font-size: 13px
+
+    .label
+        font-size: 14px
+        margin-bottom: 12px
+
     .section
         &__title
             font-size: 30px
@@ -60,6 +86,77 @@
         font-size: 14px
         padding: 20px 0
     // setting
+
+    .menu
+        display: flex
+
+    .modal
+        &-thanks
+            &__text
+                font-size: 16px
+            &__title
+                margin-bottom: 40px
+            &__close
+                top: 30px
+                right: 30px
+            &__dialog
+                max-width: 400px
+                border-radius: 30px
+                padding: 80px 30px 300px
+                background: url(../img/modal/img.png) no-repeat center bottom/300px, #2F5F5D
+        &-main
+            &__button
+                max-width: none
+            &__text
+                font-size: 12px
+                margin-bottom: 40px
+            &__title
+                margin-bottom: 40px
+            &__close
+                top: 40px
+                right: 40px
+            &__dialog
+                max-width: 400px
+                padding: 90px 50px
+                border-radius: 26px
+                background: #2F5F5D
+            &__box
+                flex-direction: column
+                align-items: center
+                margin-bottom: 25px
+            &__agree
+                &__text
+                    font-size: 12px
+
+    .footer
+        padding-top: 50px
+        padding-bottom: 50px
+        &__block
+            order: 4
+            text-align: right
+        &__nav
+            order: 3
+            text-align: center
+        &__box
+            order: 2
+        &__logo
+            order: 1
+            grid-column-start: 1
+            grid-column-end: 4
+            text-align: center
+            margin: auto
+        &__row
+            display: grid
+            grid-template-columns: repeat(3, auto)
+            grid-auto-rows: auto
+            row-gap: 85px
+
+    .terms
+        &__title
+            margin-bottom: 86px
+        &__text
+            font-size: 14px
+            margin-bottom: 20px
 
     .reviews
         background: linear-gradient(to bottom, transparent 250px, #2F5F5D 250px calc(100% - 100px), transparent calc(100% - 100px))
@@ -123,6 +220,9 @@
                 font-size: 14px
 
     .quiz
+        &__text
+            font-size: 22px
+            margin-bottom: 25px
         &__container
             padding: 100px 50px
             background: url(../img/quiz/imgM.png) no-repeat calc( 100% + 50px ) bottom #FFFFFF
@@ -130,6 +230,8 @@
         &__button
             width: 100%
             max-width: 148px
+            &--last
+                max-width: 200px
         &__buttons
             max-width: 316px
         &__title
@@ -303,6 +405,12 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .terms
+        &__link
+            display: block
+        &__hide
+            height: 0
+
     .faq
         &__title
             padding-left: 50px
@@ -426,6 +534,23 @@
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom, #CA3027
 
 @media screen and ( max-width: 575px )
+    .footer
+        &__box
+            text-align: right
+        &__nav
+            text-align: left
+            order: 2
+        &__logo
+            margin: 0
+            text-align: left
+        &__block
+            grid-column-start: 1
+            grid-column-end: 3
+            max-width: none
+            text-align: left
+            &__text
+                color: rgba(255, 255, 255, 0.8)
+
     .reviews
         background: #2F5F5D
         padding-top: 100px
@@ -539,3 +664,10 @@
     .main
         &__container
             background: url(../img/main/bg.png) no-repeat center/cover, url(../img/main/imgM.png) no-repeat right bottom/350px, #CA3027
+
+@media screen and ( max-height: 750px )
+    .menu
+        &__dialog
+            padding: 100px 50px 50px
+        &__logo
+            margin-bottom: 40px

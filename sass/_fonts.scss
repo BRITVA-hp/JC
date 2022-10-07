@@ -2,6 +2,15 @@
 @font-face {
     font-family: 'Muller';
     src:
+    url('../fonts/muller/MullerBlack.woff') format('woff'),
+    url('../fonts/muller/MullerBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src:
     url('../fonts/muller/MullerExtraBold.woff') format('woff'),
     url('../fonts/muller/MullerExtraBold.woff2') format('woff2');
     font-weight: 800;
